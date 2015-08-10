@@ -30,3 +30,10 @@ If the last code component is shorter than 3 characters, one more proceeding sec
 
 To get better search results open generated code file and check which auto generated codes need corrections.
 You can edit this file and after corrections use it for searches.
+
+The output result file contains 6 tab delimited columns in the following order:
+    Kod szukany	Product w Ceneo	Cena Ceneo	Product w Jaar	Cena Jaar	Product w Armadeo	Cena Armadeo
+    
+The first product found is selected, assuming it is a best match.
+If the row value is empty, no product was found using a code provided.
+The output can be then imported into an excel spreadsheet for father analysis.
