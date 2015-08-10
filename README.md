@@ -32,6 +32,7 @@ To get better search results open generated code file and check which auto gener
 You can edit this file and after corrections use it for searches.
 
 The output result file contains 6 tab delimited columns in the following order:
+
     Kod szukany	Product w Ceneo	Cena Ceneo	Product w Jaar	Cena Jaar	Product w Armadeo	Cena Armadeo
     
 The first product found is selected, assuming it is a best match.
