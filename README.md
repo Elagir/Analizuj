@@ -37,4 +37,4 @@ The output result file contains 7 tab delimited columns in the following order:
     
 The first product found is selected, assuming it is a best match.
 If the row value is empty, no product was found using a code provided.
-The output can be then imported into an excel spreadsheet for father analysis.
+The output can be then imported into an excel spreadsheet for analysis.
