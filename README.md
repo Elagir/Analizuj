@@ -12,4 +12,4 @@ The software requires java 1.7 and gradle installed.
 To include all dependencies in one jar module gradle-one-jar is used.
 In order to build 'fat' jar run command in your command window:
 
- gradle analizujJar
+    gradle analizujJar
