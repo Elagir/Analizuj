@@ -139,7 +139,6 @@ public class ExcelReader {
 			thread3.join();
 		} catch (InterruptedException e) {
 			System.out.println("Blad w operacji szukania:" + e.getMessage());
-			e.printStackTrace();
 		}
 		writeParsedFile(parsedData, priceCeneo, priceJaar, priceArmadeo, plikWyjsciowy+"_"+sheetName+".xls");
 	}

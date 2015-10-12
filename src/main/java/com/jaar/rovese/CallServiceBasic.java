@@ -27,6 +27,7 @@ public class CallServiceBasic {
 				int endIndex = plainAnswer.indexOf("</strong>", startIndex);
 				if (endIndex >= 0) {
 					price = plainAnswer.substring(startIndex + 23, endIndex);
+					price = price.replaceAll("[^0-9,.]", "");
 				}
 			}
 			prices.add(price);
@@ -52,6 +53,7 @@ public class CallServiceBasic {
 				int endIndex = plainAnswer.indexOf("</span>", startIndex);
 				if (endIndex >= 0) {
 					price = plainAnswer.substring(startIndex + 20, endIndex);
+					price = price.replaceAll("[^0-9,.]", "");
 				}
 			}
 			prices.add(price);
@@ -78,6 +80,7 @@ public class CallServiceBasic {
 					int endIndex = plainAnswer.indexOf("</em>", startIndex);
 					if (endIndex >= 0) {
 						price = plainAnswer.substring(startIndex + 4, endIndex);
+						price = price.replaceAll("[^0-9,.]", "");
 					}
 				}
 			}

@@ -28,6 +28,8 @@ public class CallService {
 				int endIndex = plainAnswer.indexOf("</strong>", startIndex);
 				if (endIndex >= 0) {
 					price = plainAnswer.substring(startIndex + 23, endIndex);
+					price = price.replaceAll("[^0-9,.]", "");
+				
 					String plainAnswerSubstr = plainAnswer.substring(0, endIndex);
 					int titleIndex = plainAnswerSubstr.lastIndexOf("title=");
 					if (titleIndex >= 0) {
@@ -37,7 +39,7 @@ public class CallService {
 			}
 			productNames.add(title);
 			prices.add(price);
-			System.out.println(title + " " + price);
+			//System.out.println(title + " " + price);
 		}
 	}
 
@@ -60,6 +62,7 @@ public class CallService {
 				int endIndex = plainAnswer.indexOf("</span>", startIndex);
 				if (endIndex >= 0) {
 					price = plainAnswer.substring(startIndex + 20, endIndex);
+					price = price.replaceAll("[^0-9,.]", "");
 					String plainAnswerSubstr = plainAnswer.substring(0, endIndex);
 					int titleIndex = plainAnswerSubstr.lastIndexOf("title=\"");
 					if (titleIndex >= 0) {
@@ -70,7 +73,7 @@ public class CallService {
 			}
 			productNames.add(title);
 			prices.add(price);
-			System.out.println(title + " " + price);
+			//System.out.println(title + " " + price);
 		}
 	}
 
@@ -95,6 +98,7 @@ public class CallService {
 					int endIndex = plainAnswer.indexOf("</em>", startIndex);
 					if (endIndex >= 0) {
 						price = plainAnswer.substring(startIndex + 4, endIndex);
+						price = price.replaceAll("[^0-9,.]", "");
 						String plainAnswerSubstr = plainAnswer.substring(0, endIndex);
 						int titleIndex = plainAnswerSubstr.lastIndexOf("<span class=\"productname\">");
 						if (titleIndex >= 0) {
@@ -106,7 +110,7 @@ public class CallService {
 			}
 			productNames.add(title);
 			prices.add(price);
-			System.out.println(title + " " + price);
+			//System.out.println(title + " " + price);
 		}
 
 	}
