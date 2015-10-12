@@ -16,9 +16,6 @@ import java.util.List;
 import org.glassfish.jersey.client.ClientConfig;
 
 public class Analizuj {
-	public static final String URL_ARMADEO = "http://www.armadeo.pl/catalogsearch/result?q=";
-	public static final String URL_JAAR = "http://sklep.jaar.krakow.pl/pl/searchquery/";
-	public static final String URL_CENEO = "http://www.ceneo.pl/Budowa_i_remont;szukaj-";
 	public static final String FILE_NAME_PARSED = "./wynik";
 
 	public static void main(String[] args) {
@@ -61,9 +58,9 @@ public class Analizuj {
 		List<String> priceArmadeo = new ArrayList<String>();
 
 		CallService service = new CallService();
-		service.callCeneoService(client, parsedCodes, URL_CENEO, prodCeneo, priceCeneo);
-		service.callJAARService(client, parsedCodes, URL_JAAR, prodJaar, priceJaar);
-		service.callArmadeoService(client, parsedCodes, URL_ARMADEO, prodArmadeo, priceArmadeo);
+		service.callCeneoService(client, parsedCodes, Defines.URL_CENEO, prodCeneo, priceCeneo);
+		service.callJAARService(client, parsedCodes, Defines.URL_JAAR, prodJaar, priceJaar);
+		service.callArmadeoService(client, parsedCodes, Defines.URL_ARMADEO, prodArmadeo, priceArmadeo);
 
 		writeParsedFile(parsedCodes, prodCeneo, prodJaar, prodArmadeo, priceCeneo, priceJaar, priceArmadeo,
 				fileNameParsed);
