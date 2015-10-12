@@ -16,17 +16,29 @@ Adjust your parameters before building jar file or make sure that properties fil
 Here are parameters and their meanings:
 
 Name used for the producent column
+
     producent=Cersanit
-List of spreadsheet workbooks being processed    
+    
+List of spreadsheet workbooks being processed
+
     workbooks=3 
+    
 Columns numbers on the spreadsheet beeing processed (column start from 0)
-First is for Kod producenta (katalogowy), second Opis asortymentu, third Cena producenta (katalogowa)    
+
+First is for Kod producenta (katalogowy), second Opis asortymentu, third Cena producenta (katalogowa) 
+
     columns=5 6 9
+    
 Column number on the spreadsheet containg product code    
+
     code_indeks=5
+    
 Input file including path    
+
     plik_wejsciowy=C:\\Lista cenowa Rovese_PL_TT_ 13 05 2015.xlsx
+    
 Output file path name, workdook name is attached to this file name    
+
     plik_wyjsciowy=C:\\output
 
 ## Building a 'fat' Jar
