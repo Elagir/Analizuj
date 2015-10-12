@@ -9,7 +9,7 @@ The software requires java 1.8 and gradle installed.
 
 # Properties file
 
-There is a .properies file used to define parameters and properties located in Analizuj/src/main/resources/app.properties
+There is properies file used to define parameters located in Analizuj/src/main/resources/app.properties
 
 Adjust your parameters before building jar file or make sure that properties file is in the classpath.
 
@@ -19,11 +19,11 @@ Name used for the producent column
 
     producent=Cersanit
     
-List of spreadsheet workbooks being processed
+List of spreadsheet workbooks being processed (workbooks count from 0)
 
     workbooks=3 
     
-Columns numbers on the spreadsheet beeing processed (column start from 0)
+Columns numbers on the spreadsheet beeing processed (columns count from 0)
 
 First is for Kod producenta (katalogowy), second Opis asortymentu, third Cena producenta (katalogowa) 
 
@@ -37,7 +37,7 @@ Input file including path
 
     plik_wejsciowy=C:\\Lista cenowa Rovese_PL_TT_ 13 05 2015.xlsx
     
-Output file path name, workdook name is attached to this file name    
+Output file path name, workbook name is attached to this file name    
 
     plik_wyjsciowy=C:\\output
 
