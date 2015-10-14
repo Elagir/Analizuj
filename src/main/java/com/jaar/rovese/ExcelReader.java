@@ -96,10 +96,20 @@ public class ExcelReader {
 					Cell cell = row.getCell(columnNo);
 					switch (cell.getCellType()) {
 					case Cell.CELL_TYPE_NUMERIC:
-						columndata.add(cell.getNumericCellValue() + "");
+						String numvalue = cell.getNumericCellValue() + "";
+						if(columns.indexOf(columnNo) == columns.size()-1)
+						{
+							numvalue = numvalue.replaceAll("\\.", ",");
+						}
+						columndata.add(numvalue);
 						break;
 					case Cell.CELL_TYPE_STRING:
-						columndata.add(cell.getStringCellValue());
+						String strvalue = cell.getStringCellValue();
+						if(columns.indexOf(columnNo) == columns.size()-1)
+						{
+							strvalue = strvalue.replaceAll("\\.", ",");
+						}
+						columndata.add(strvalue);
 						break;
 					}
 				}
