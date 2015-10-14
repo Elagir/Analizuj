@@ -5,7 +5,41 @@ This is module for researching and comparing products and their prices from 3 di
 
 Download and Install Analizuj packet
 
-The software requires java 1.7 and gradle installed.
+The software requires java 1.8 and gradle installed.
+
+# Properties file
+
+There is properies file used to define parameters located in Analizuj/src/main/resources/app.properties
+
+Adjust your parameters before building jar file or make sure that properties file is in the classpath.
+
+Here are parameters and their meanings:
+
+Name used for the producent column
+
+    producent=Cersanit
+    
+List of spreadsheet workbooks being processed (workbooks count from 0)
+
+    workbooks=3 
+    
+Columns numbers on the spreadsheet beeing processed (columns count from 0)
+
+First is for Kod producenta (katalogowy), second Opis asortymentu, third Cena producenta (katalogowa) 
+
+    columns=5 6 9
+    
+Column number on the spreadsheet containg product code    
+
+    code_indeks=5
+    
+Input file including path    
+
+    plik_wejsciowy=C:\\Lista cenowa Rovese_PL_TT_ 13 05 2015.xlsx
+    
+Output file path name, workbook name is attached to this file name    
+
+    plik_wyjsciowy=C:\\output
 
 ## Building a 'fat' Jar
 
@@ -16,24 +50,11 @@ In order to build 'fat' jar run command in your command window:
 
 ## Running Analizuj module
 
-The program can have up to 3 input parameters.
-First parameter is required and points to input spreadsheet file (xls).
-Second parameter is the output file, if not specified default is used.
-Third parameter is optional and points to file with product codes, if not specified product codes are parsed from the original input spreadsheet and a code file is created.
-
-
-    java -jar analizuj.jar ./input.xls [./output] [./codes]
+    java -jar analizuj.jar 
     
-Second column is used from the input spreadsheet to pull product name.
-Codes are parsed from the last part of a product name.
-If the last code component is shorter than 3 characters, one more proceeding section is added to a code.
+The output result file contains 6 tab delimited columns in the following order:
 
-To get better search results open generated code file and check which auto generated codes need corrections.
-You can edit this file and after corrections use it for searches.
-
-The output result file contains 7 tab delimited columns in the following order:
-
-    Kod szukany/t	Product w Ceneo/t	Cena Ceneo/t	Product w Jaar/t	Cena Jaar/t	Product w Armadeo/t	Cena Armadeo
+    Producent\t    Kod producenta (katalogowy)\t  Opis asortymentu\t Cena producenta (katalogowa)\t Cena Ceneo\t   Cena Jaar\t Cena Armadeo
     
 The first product found is selected, assuming it is a best match.
 If the row value is empty, no product was found using a code provided.
