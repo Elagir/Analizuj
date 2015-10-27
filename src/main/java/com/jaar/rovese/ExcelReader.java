@@ -83,6 +83,11 @@ public class ExcelReader {
 		return codes;
 	}
 
+	public static List<String> getParsedProducentCodes(List<List<String>> data) {
+		List<String> codes = new ArrayList<String>();
+		data.forEach(value -> codes.add(producent+"+"+value.get(codeIdx)));
+		return codes;
+	}
 
 	public static List<List<String>> processWorksheet(XSSFSheet sheet, List<Integer> columns) {
 
@@ -112,6 +117,7 @@ public class ExcelReader {
 						columndata.add(strvalue);
 						break;
 					}
+					
 				}
 				rowumndata.add(columndata);
 			}
@@ -130,10 +136,12 @@ public class ExcelReader {
 		List<String> priceArmadeo = new ArrayList<String>();
 		
 		List<String> parsedCodes = getParsedCodes(parsedData);
+		List<String> parsedProducentCodes = getParsedProducentCodes(parsedData);
 		
 		
 		CallServiceBasic service = new CallServiceBasic();
-		Runnable r1 = () -> service.callCeneoService(client, parsedCodes, Defines.URL_CENEO, priceCeneo);
+		Runnable r1 = () -> service.callCeneoService(client, parsedProducentCodes, Defines.URL_CENEO, priceCeneo);
+//		Runnable r1 = () -> service.callCeneoService(client, parsedCodes, Defines.URL_CENEO, priceCeneo);
 		Runnable r2 = () -> service.callJAARService(client, parsedCodes, Defines.URL_JAAR, priceJaar);
 		Runnable r3 = () -> service.callArmadeoService(client, parsedCodes, Defines.URL_ARMADEO, priceArmadeo);
 		Thread thread1 = new Thread(r1);
